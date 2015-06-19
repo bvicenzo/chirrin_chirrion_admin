@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = "Manage toggles with Chirrin Chirrion"
   s.description = "Provides a simple interface to magange toggles with Chirrin Chirrion"
-  s.license     = "MIT"
+  s.license     = "GNU"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.2.2"
