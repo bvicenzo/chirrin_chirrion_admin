@@ -15,8 +15,14 @@ Gem::Specification.new do |s|
   s.license     = "GNU"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
+  # Dependencies
   s.add_dependency "rails", "~> 4.2.2"
   s.add_dependency "chirrin-chirrion", "~> 0.3.0"
+
+  # Development Dependencies
+  s.add_development_dependency "redis", "~> 3.2.1"
+  s.add_development_dependency "rspec-rails", "~> 3.3.2"
+  s.add_development_dependency "capybara", "~> 2.4.4"
 end

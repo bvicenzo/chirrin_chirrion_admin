@@ -22,14 +22,8 @@ load 'rails/tasks/statistics.rake'
 
 Bundler::GemHelper.install_tasks
 
-require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+namespace :test do |t|
+  task all: [:spec]
 end
 
-
-task default: :test
+task default: 'test:all'
