@@ -1,2 +1,10 @@
-<h1>Toggles#new</h1>
-<p>Find me in app/views/chirrin_chirrion_admin/toggles/new.html.erb</p>
+<h1>Create Toggle</h1>
+<%= form_tag(controller: 'toggles', action: 'create', method: 'post', class: 'toggle-form') do |form| %>
+  <%= label_tag(:name, 'Name') %>
+  <%= text_field_tag(:name) %>
+  <%= check_box_tag(:active) %>
+  <%= label_tag(:active, 'Active') %>
+  <%= label_tag(:description, 'Description') %>
+  <%= text_field_tag(:description) %>
+  <%= submit_tag('Create') %>
+<% end %>

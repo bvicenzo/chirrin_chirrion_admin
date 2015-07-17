@@ -20,11 +20,13 @@ Gem::Specification.new do |s|
   # Dependencies
   s.add_dependency "rails", ">= 3.2"
   s.add_dependency "chirrin-chirrion", ">= 0.4.1"
+  s.add_dependency "jquery-rails", ">= 2.2.0"
 
   # Development Dependencies
   s.add_development_dependency "redis", ">= 3.2.1"
   s.add_development_dependency "rspec-rails", "~> 3.3.2"
   s.add_development_dependency "capybara", "~> 2.4.4"
+  s.add_development_dependency "poltergeist", ">= 1.6.0"
   s.add_development_dependency "pry"
   s.add_development_dependency "pry-nav"
 end

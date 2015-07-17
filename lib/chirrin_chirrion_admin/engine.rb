@@ -2,6 +2,7 @@ require 'chirrin-chirrion'
 
 module ChirrinChirrionAdmin
   class Engine < ::Rails::Engine
+    require 'jquery-rails'
     isolate_namespace ChirrinChirrionAdmin
 
     config.generators do |g|
