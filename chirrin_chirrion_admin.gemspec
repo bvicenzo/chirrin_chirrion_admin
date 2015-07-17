@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   # Dependencies
   s.add_dependency "rails", "~> 4.2.2"
-  s.add_dependency "chirrin-chirrion", "~> 0.3.0"
+  s.add_dependency "chirrin-chirrion", "~> 0.4.0"
 
   # Development Dependencies
   s.add_development_dependency "redis", "~> 3.2.1"

@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount ChirrinChirrionAdmin::Engine => "/chirrin_chirrion_admin"
+  mount ChirrinChirrionAdmin::Engine => "/chirrin-chirrion-admin"
 end
