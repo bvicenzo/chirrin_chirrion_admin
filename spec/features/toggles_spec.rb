@@ -11,6 +11,7 @@ describe 'Toggles', type: :feature do
         expect(page).to have_content('Active')
         expect(page).to have_content('Description')
         expect(page).to have_content('Actions')
+        expect(page).to have_content('New Toggle')
       end
     end
 
@@ -29,6 +30,7 @@ describe 'Toggles', type: :feature do
         expect(page).to have_content('new_payment_gateway')
         expect(page).to have_content('Changes the gateway to ne new one')
         expect(page).to have_content('false')
+        expect(page).to have_content('New Toggle')
       end
     end
   end
@@ -73,6 +75,37 @@ describe 'Toggles', type: :feature do
       expect(page).to have_content('Toggle has been removed with success')
       expect(page).not_to have_content('new_payment_gateway')
       expect(page).not_to have_content('Changes the gateway to ne new one')
+    end
+  end
+
+  describe 'Activating and Inactivating a toggle' do
+    before do
+      ChirrinChirrion.add_toggle('new_payment_gateway', { active: active, description: 'Changes the gateway to ne new one' })
+      visit chirrin_chirrion_admin.toggles_path
+    end
+
+    context 'when the toggle is active' do
+      let(:active) { true }
+
+      it 'makes the togle inactive', js: true do
+        expect(page).to have_content('Inactivate')
+        click_link('inactivate_new_payment_gateway')
+        page.evaluate_script('window.confirm = function() { return true; }')
+        expect(page).to have_content('Toggle has been inactivated with success')
+        expect(page).to have_content('false')
+      end
+    end
+
+    context 'when the toggle is inactive' do
+      let(:active) { false }
+
+      it 'makes the toggle active', js: true do
+        expect(page).to have_content('Activate')
+        click_link('activate_new_payment_gateway')
+        page.evaluate_script('window.confirm = function() { return true; }')
+        expect(page).to have_content('Toggle has been activated with success')
+        expect(page).to have_content('true')
+      end
     end
   end
 end

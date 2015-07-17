@@ -16,6 +16,17 @@
         <td><%= toggle.description %></td>
         <td>
           <ul class="toggle-actions">
+            <% if toggle.active %>
+              <li><%= link_to('Inactivate', chirrin_chirrion_admin.inactivate_toggle_path(toggle.name),
+                              { method: :put,
+                                id: "inactivate_#{toggle.name}",
+                                data: { confirm: 'Do you really want to inactivate this toggle?' } }) %></li>
+            <% else %>
+              <li><%= link_to('Activate', chirrin_chirrion_admin.activate_toggle_path(toggle.name),
+                              { method: :put,
+                                id: "activate_#{toggle.name}",
+                                data: { confirm: 'Do you really want to activate this toggle?' } }) %></li>
+            <% end %>
             <li><%= link_to('Remove', chirrin_chirrion_admin.toggle_path(toggle.name),
                             { method: :delete,
                               id: "remove_#{toggle.name}",
@@ -26,3 +37,6 @@
     </tbody>
   <% end %>
 </table>
+<div class='toggles-navigation'>
+  <%= link_to('New Toggle', chirrin_chirrion_admin.new_toggle_path) %>
+</div>

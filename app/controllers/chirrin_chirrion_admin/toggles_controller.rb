@@ -15,10 +15,16 @@ module ChirrinChirrionAdmin
       redirect_to(action: :index)
     end
 
-    def acivate
+    def activate
+      ChirrinChirrion.chirrin!(params[:id])
+      flash[:success] = 'Toggle has been activated with success'
+      redirect_to(action: :index)
     end
 
     def inactivate
+      ChirrinChirrion.chirrion!(params[:id])
+      flash[:success] = 'Toggle has been inactivated with success'
+      redirect_to(action: :index)
     end
 
     def destroy
