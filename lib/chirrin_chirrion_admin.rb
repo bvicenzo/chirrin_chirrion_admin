@@ -5,5 +5,8 @@ module ChirrinChirrionAdmin
 
   def self.setup
     yield self
+    ChirrinChirrion.config(database_adapter: self.database_atapter)
+
+    nil
   end
 end
