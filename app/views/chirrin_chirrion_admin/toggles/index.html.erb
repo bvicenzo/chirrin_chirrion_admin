@@ -1,2 +1,21 @@
-<h1>Toggles#index</h1>
-<p>Find me in app/views/chirrin_chirrion_admin/toggles/index.html.erb</p>
+<h1>Toggles</h1>
+<table class="toggles-list">
+  <thead>
+    <tr>
+      <th>Toggle</th>
+      <th>Active</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <% @toggles.each do |toggle| %>
+    <tbody>
+      <tr>
+        <td><%= toggle.name %></td>
+        <td><%= toggle.active %></td>
+        <td><%= toggle.description %></td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

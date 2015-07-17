@@ -22,7 +22,9 @@ Gem::Specification.new do |s|
   s.add_dependency "chirrin-chirrion", ">= 0.4.1"
 
   # Development Dependencies
-  s.add_development_dependency "redis", "~> 3.2.1"
+  s.add_development_dependency "redis", ">= 3.2.1"
   s.add_development_dependency "rspec-rails", "~> 3.3.2"
   s.add_development_dependency "capybara", "~> 2.4.4"
+  s.add_development_dependency "pry"
+  s.add_development_dependency "pry-nav"
 end
