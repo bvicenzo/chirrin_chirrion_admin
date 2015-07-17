@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   # Dependencies
-  s.add_dependency "rails", "~> 4.2.2"
-  s.add_dependency "chirrin-chirrion", "~> 0.4.0"
+  s.add_dependency "rails", ">= 3.2"
+  s.add_dependency "chirrin-chirrion", ">= 0.4.1"
 
   # Development Dependencies
   s.add_development_dependency "redis", "~> 3.2.1"
