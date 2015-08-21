@@ -13,6 +13,9 @@ module ChirrinChirrionAdmin
       ChirrinChirrion.add_toggle(params[:name], {description: params[:description], active: params[:active].present?})
       flash[:success] = 'Toggle has been created with success'
       redirect_to(action: :index)
+    rescue ChirrinChirrion::Errors::ToggleIsRequired
+      flash.now[:error] = 'Toggle name must be filled.'
+      render(action: :new)
     end
 
     def activate

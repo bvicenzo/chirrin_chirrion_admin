@@ -5,12 +5,12 @@
     <%= text_field_tag(:name) %>
   </p>
   <p>
-    <%= check_box_tag(:active) %>
+    <%= check_box_tag(:active, (params[:active].present? ? params[:active] : '1')) %>
     <%= label_tag(:active, 'Active') %>
   </p>
   <p>
     <%= label_tag(:description, 'Description') %>
-    <%= text_area_tag(:description, '', size: '24x6') %>
+    <%= text_area_tag(:description, params[:description], size: '24x6') %>
   </p>
   <p>
     <%= submit_tag('Create') %>

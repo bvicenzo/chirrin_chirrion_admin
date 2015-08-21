@@ -38,6 +38,17 @@ describe 'Toggles', type: :feature do
   describe 'Create toggles' do
     before { visit chirrin_chirrion_admin.new_toggle_path }
 
+    it 'dows not create the toggle when its name is not set' do
+       expect(page).to have_content('Create Toggle')
+       fill_in 'Name', with: ''
+       check('Active')
+       fill_in 'Description', with: 'I Forgot to fill the toggle name'
+       click_button('Create')
+       expect(page).to have_content('Toggle name must be filled.')
+       expect(find_field('Description')).to have_content('I Forgot to fill the toggle name')
+       expect(find('#active').value).to eq('1')
+    end
+
     it 'success to create an inactive toggle' do
        expect(page).to have_content('Create Toggle')
        fill_in 'Name', with: 'new_user_register_validation'
