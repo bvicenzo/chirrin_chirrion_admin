@@ -1,7 +1,7 @@
 <h1>Create Toggle</h1>
 <%= form_tag(controller: 'toggles', action: 'create', method: 'post', class: 'toggle-form') do |form| %>
   <p>
-    <%= label_tag(:name, 'Name') %>
+    <%= label_tag(:name, 'Name*') %>
     <%= text_field_tag(:name) %>
   </p>
   <p>
