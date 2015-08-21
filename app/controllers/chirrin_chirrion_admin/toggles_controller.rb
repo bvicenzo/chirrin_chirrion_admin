@@ -18,13 +18,13 @@ module ChirrinChirrionAdmin
       render(action: :new)
     end
 
-    def activate
+    def chirrin
       ChirrinChirrion.chirrin!(params[:id])
       flash[:success] = 'Toggle has been activated with success'
       redirect_to(action: :index)
     end
 
-    def inactivate
+    def chirrion
       ChirrinChirrion.chirrion!(params[:id])
       flash[:success] = 'Toggle has been inactivated with success'
       redirect_to(action: :index)

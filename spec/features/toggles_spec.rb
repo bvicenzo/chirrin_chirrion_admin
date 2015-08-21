@@ -99,8 +99,8 @@ describe 'Toggles', type: :feature do
       let(:active) { true }
 
       it 'makes the togle inactive', js: true do
-        expect(page).to have_content('Inactivate')
-        click_link('inactivate_new_payment_gateway')
+        expect(page).to have_content('Chirrion!')
+        click_link('chirrion_new_payment_gateway')
         page.evaluate_script('window.confirm = function() { return true; }')
         expect(page).to have_content('Toggle has been inactivated with success')
         expect(page).to have_content('false')
@@ -111,8 +111,8 @@ describe 'Toggles', type: :feature do
       let(:active) { false }
 
       it 'makes the toggle active', js: true do
-        expect(page).to have_content('Activate')
-        click_link('activate_new_payment_gateway')
+        expect(page).to have_content('Chirrin!')
+        click_link('chirrin_new_payment_gateway')
         page.evaluate_script('window.confirm = function() { return true; }')
         expect(page).to have_content('Toggle has been activated with success')
         expect(page).to have_content('true')
