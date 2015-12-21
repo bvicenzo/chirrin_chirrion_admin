@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   # Dependencies
   s.add_dependency "rails", ">= 3.2"
   s.add_dependency "chirrin-chirrion", ">= 0.5.1"
-  s.add_dependency "jquery-rails", "< 3", ">= 1.0.0"
+  s.add_dependency "jquery-rails"
 
   # Development Dependencies
   s.add_development_dependency "redis", ">= 3.2.1"
