@@ -1,6 +1,10 @@
 # Change Log
 All notable changes of the project you will find here.
 
+## [0.0.3] - [2015-12-21]
+### Changed
+- Unlock jaquery rails gem dependency
+
 ## [0.0.2] - [2015-08-20]
 ### Changed
 - Create toggles does not permit creation without name.
