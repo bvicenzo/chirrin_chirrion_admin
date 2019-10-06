@@ -1,6 +1,9 @@
 <h1>Toggles</h1>
-<table class="toggles-list">
-  <thead>
+
+<p>&nbsp;</p>
+
+<table class="toggles-list table striped table-hover">
+  <thead class="thead-dark">
     <tr>
       <th>Toggle</th>
       <th>Active</th>
@@ -8,35 +11,57 @@
       <th>Actions</th>
     </tr>
   </thead>
-  <% @toggles.each do |toggle| %>
-    <tbody>
+  <tbody>
+    <% @toggles.each do |toggle| %>
       <tr>
         <td><%= toggle.name %></td>
-        <td><%= toggle.active %></td>
+        <td>
+          <% if toggle.active %>
+            <%= render 'chirrin_chirrion_admin/toggles/link_to_chirrion', toggle: toggle do %>
+              <i class="fa fa-toggle-on"></i>
+            <% end %>
+          <% else %>
+            <%= render 'chirrin_chirrion_admin/toggles/link_to_chirrin', toggle: toggle do %>
+              <i class="fa fa-toggle-off"></i>
+            <% end %>
+          <% end %>
+        </td>
         <td><%= toggle.description %></td>
         <td>
           <ul class="toggle-actions">
             <% if toggle.active %>
-              <li><%= link_to('Chirrion!', chirrin_chirrion_admin.chirrion_toggle_path(toggle.name),
-                              { method: :put,
-                                id: "chirrion_#{toggle.name}",
-                                data: { confirm: 'Do you really want to inactivate this toggle?' } }) %></li>
+              <li>
+                <%= render 'chirrin_chirrion_admin/toggles/link_to_chirrion', toggle: toggle do %>
+                  <%= chirrion_button %>
+                <% end %>
+              </li>
             <% else %>
-              <li><%= link_to('Chirrin!', chirrin_chirrion_admin.chirrin_toggle_path(toggle.name),
-                              { method: :put,
-                                id: "chirrin_#{toggle.name}",
-                                data: { confirm: 'Do you really want to activate this toggle?' } }) %></li>
+              <li>
+                <%= render 'chirrin_chirrion_admin/toggles/link_to_chirrin', toggle: toggle do %>
+                  <%= chirrin_button %>
+                <% end %>
+              </li>
             <% end %>
-            <li><%= link_to('Remove', chirrin_chirrion_admin.toggle_path(toggle.name),
-                            { method: :delete,
-                              id: "remove_#{toggle.name}",
-                              data: { confirm: 'Do you really want to remove this toggle?' } }) %></li>
+
+            <li>
+              <%= link_to(
+                remove_toggle_button,
+                chirrin_chirrion_admin.toggle_path(toggle.name),
+                {
+                  method: :delete,
+                  id: "remove_#{toggle.name}",
+                  data: { confirm: 'Do you really want to remove this toggle?' }
+                })
+              %>
+            </li>
           </ul>
         </td>
       </tr>
-    </tbody>
-  <% end %>
+    <% end %>
+  </tbody>
 </table>
 <div class='toggles-navigation'>
-  <%= link_to('New Toggle', chirrin_chirrion_admin.new_toggle_path) %>
+  <%= link_to(chirrin_chirrion_admin.new_toggle_path) do %>
+    <button type="button" class="btn btn-success">New Toggle</button>
+  <% end %>
 </div>

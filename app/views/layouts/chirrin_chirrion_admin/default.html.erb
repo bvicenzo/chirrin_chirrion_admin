@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chirrin Chirrion Admin</title>
+    <%= stylesheet_link_tag 'chirrin_chirrion_admin/application', media: 'all' %>
+    <%= javascript_include_tag 'chirrin_chirrion_admin/application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/chirrin_chirrion_admin/flash_messages' %>
+    <%= yield %>
+  </body>
+</html>

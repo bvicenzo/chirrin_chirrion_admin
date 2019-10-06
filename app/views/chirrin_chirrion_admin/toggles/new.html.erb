@@ -1,18 +1,23 @@
-<h1>Create Toggle</h1>
-<%= form_tag(controller: 'toggles', action: 'create', method: 'post', class: 'toggle-form') do |form| %>
-  <p>
-    <%= label_tag(:name, 'Name*') %>
-    <%= text_field_tag(:name) %>
-  </p>
-  <p>
-    <%= check_box_tag(:active, (params[:active].present? ? params[:active] : '1')) %>
-    <%= label_tag(:active, 'Active') %>
-  </p>
-  <p>
-    <%= label_tag(:description, 'Description') %>
-    <%= text_area_tag(:description, params[:description], size: '24x6') %>
-  </p>
-  <p>
-    <%= submit_tag('Create') %>
-  </p>
-<% end %>
+<h1>Create new toggle</h1>
+
+<p>&nbsp;</p>
+
+<section class="form-container">
+  <%= form_tag(controller: 'toggles', action: 'create', method: 'post', class: 'toggle-form') do |form| %>
+    <div class="form-group">
+      <%= label_tag(:name, 'Name*') %>
+      <%= text_field_tag(:name, '', class: 'form-control') %>
+    </div>
+    <div class="form-group">
+      <%= check_box_tag(:active, (params[:active].present? ? params[:active] : '1'), class: 'form-check-input') %>
+      <%= label_tag(:active, 'Active', class: 'form-check-label') %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:description, 'Description') %>
+      <%= text_area_tag(:description, params[:description], size: '24x6', class: 'form-control') %>
+    </div>
+    <div class="form-group">
+      <%= submit_tag('Create', class: 'btn btn-success float-right') %>
+    </div>
+  <% end %>
+</section>
