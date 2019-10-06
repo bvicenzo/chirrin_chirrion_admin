@@ -55,3 +55,11 @@ a:hover {
   padding: 25px;
   padding-bottom: 50px;
 }
+
+.materialize .row .col.checkbox-container {
+  padding-top: 28px;
+}
+
+.bootstrap .row .col.checkbox-container {
+  padding-top: 35px;
+}

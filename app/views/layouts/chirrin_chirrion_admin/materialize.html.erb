@@ -7,9 +7,14 @@
     <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
-    <%= render 'layouts/chirrin_chirrion_admin/flash_messages' %>
-    <%= yield %>
+  <body class="materialize">
+    <div class="container">
+      <%= render 'layouts/chirrin_chirrion_admin/flash_messages' %>
+      <%= yield %>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
