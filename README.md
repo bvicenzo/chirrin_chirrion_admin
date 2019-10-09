@@ -7,6 +7,10 @@ on top of the [chirrin-chirrion gem](https://github.com/bvicenzo/chirrin-chirrio
 
 Add the gem to your Gemfile:
 
+# How to use
+
+First of all, add this gem to your Rails website:
+
 ```
 gem 'chirrin-chirrion-admin'
 ```
@@ -18,6 +22,13 @@ bundle install
 ```
 
 Then, it is necessary to mount the Engine in your `routes` file. In the
+Make sure you add `redis` if you choose it as your adapter:
+
+```
+gem 'redis'
+```
+
+Then, it is necessary to mount the Engine in the routes file. In the
 `config/application.rb`, add this just below the line with
 `Bundler.require(*Rails.groups)`:
 
@@ -31,7 +42,6 @@ add:
 ```
 mount ChirrinChirrionAdmin::Engine => '/admin', as: 'chirrin_chirrion_admin'
 ```
-
 
 ## The adapter
 
@@ -53,6 +63,7 @@ bundle install
 
 Finally, add an initializer in `config/initializers` to set your adapter. You
 can call it `chirrin_chirrion_admin.rb`, for example, and add this code to it:
+
 
 ```
 require 'redis'
@@ -104,4 +115,9 @@ end
 ChirrinChirrionAdmin.setup do |config|
   config.front_end_framework = :materialize
 end
+
+Now, you are ready to start your server and have fun:
+
+```
+bin/rails s
 ```
