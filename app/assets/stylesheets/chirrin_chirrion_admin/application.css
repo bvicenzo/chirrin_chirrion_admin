@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  margin-top: 25px;
+}
+
+i.fa.chirrin {
+  color: #00b500;
+}
+
+i.fa.chirrion {
+  color: #c1ad04;
+}
+
+i.fa.remove {
+  color: #d81010;
+}
+
+i.fa-toggle-on,
+i.fa-toggle-off {
+  font-size: 30px;
+  color: #000;
+}
+
+.toggle-actions {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toggle-actions a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.form-container {
+  box-shadow: 0px 5px 5px 5px #ccc;
+  border: 1px solid #eee;
+  padding: 25px;
+  padding-bottom: 50px;
+}
+
+.materialize .row .col.checkbox-container {
+  padding-top: 28px;
+}
+
+.bootstrap .row .col.checkbox-container {
+  padding-top: 35px;
+}

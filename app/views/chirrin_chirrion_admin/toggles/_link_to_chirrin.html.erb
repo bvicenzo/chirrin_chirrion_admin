@@ -1,0 +1,11 @@
+<%
+  params = {
+    method: :put,
+    id: "chirrin_#{toggle.name}",
+    data: { confirm: 'Do you really want to activate this toggle?' }
+  }
+%>
+
+<%= link_to(chirrin_chirrion_admin.chirrin_toggle_path(toggle.name), params) do %>
+  <%= yield %>
+<% end %>
