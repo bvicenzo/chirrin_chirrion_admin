@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   # Development Dependencies
   s.add_development_dependency "redis", ">= 3.2.1"
   s.add_development_dependency "rspec-rails", "~> 3.3.2"
-  s.add_development_dependency "capybara", "~> 2.4.4"
+  s.add_development_dependency "capybara", "~> 3.34.0"
   s.add_development_dependency "poltergeist", ">= 1.6.0"
   s.add_development_dependency "pry"
   s.add_development_dependency "pry-nav"
