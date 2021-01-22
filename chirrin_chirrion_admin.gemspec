@@ -28,5 +28,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
   s.add_development_dependency 'pry-nav'
   s.add_development_dependency 'redis', '>= 3.2.1'
-  s.add_development_dependency 'rspec-rails', '~> 3.3.2'
+  s.add_development_dependency 'rspec-rails', '~> 4.0.2'
 end
