@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ChirrinChirrionAdmin::Engine.routes.draw do
   resources :toggles , only: [:index, :new, :create, :destroy]
 
