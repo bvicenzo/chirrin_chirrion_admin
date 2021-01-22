@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ChirrinChirrionAdmin
   module ApplicationHelper
     def chirrin_button
