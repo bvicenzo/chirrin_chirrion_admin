@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'chirrin_chirrion_admin/engine'
 
 module ChirrinChirrionAdmin
