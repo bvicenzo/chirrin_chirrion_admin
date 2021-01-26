@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '>= 3.2'
 
   # Development Dependencies
-  s.add_development_dependency 'capybara', '~> 3.34.0'
+  s.add_development_dependency 'capybara', '~> 3.35.0'
   s.add_development_dependency 'poltergeist', '>= 1.6.0'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'pry-nav'
